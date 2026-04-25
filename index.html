@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>波切カバン店 - 再構築中</title>
+    <title>波切カバン店 - 大切に、長く使う。職人の手による丁寧なカバン修理</title>
     
     <!-- CSS imports -->
     <link rel="stylesheet" href="assets/css/main.css">
@@ -423,6 +423,14 @@
                 if (spNav) spNav.classList.toggle('active', isActive);
             });
         }
+
+        // スマホメニューのリンクをタップしたら閉じる
+        document.querySelectorAll('.sp-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (toggleBtn) toggleBtn.classList.remove('menu-active');
+                if (spNav) spNav.classList.remove('active');
+            });
+        });
 
         // スクロールに応じたメニューのハイライト (Scrollspy)
         document.addEventListener('DOMContentLoaded', () => {
