@@ -183,6 +183,38 @@
             white-space: nowrap;
             border: 0;
         }
+        /* Floating Phone Button (Option B) */
+        .floating-tel-button {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 64px;
+            height: 64px;
+            background-color: #0a78aa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+
+        .floating-tel-button:active {
+            transform: scale(0.9);
+        }
+
+        .floating-tel-button img {
+            width: 32px;
+            height: 32px;
+            filter: brightness(0) invert(1);
+        }
+
+        @media (min-width: 1080px) {
+            .floating-tel-button {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -559,6 +591,11 @@
             </div>
         </div>
     </div>
+    <!-- Floating Phone Button for Mobile (Option B) -->
+    <a href="tel:0552413449" class="floating-tel-button" aria-label="電話をかける">
+        <img src="assets/img/local_phone.svg" alt="">
+    </a>
+
     <script>
         // ハンバーガーメニュー制御
         const toggleBtn = document.getElementById('fnMenuToggleButton');
