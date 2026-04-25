@@ -16,6 +16,33 @@
             background: #fff;
             border-bottom: 1px solid #e6e6e4;
         }
+
+        /* Caster emphasis styling */
+        .caster-badge {
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            background-color: #e63946;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-5deg);
+            z-index: 10;
+        }
+        .caster-appeal {
+            font-size: 13px;
+            color: #e63946;
+            font-weight: bold;
+            margin-top: 12px;
+            line-height: 1.4;
+        }
+        .caster-special-border {
+            border: 2px solid #e63946 !important;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
@@ -62,6 +89,49 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Pricing Section -->
+                <section id="pricing" class="pg-top">
+                    <div class="page-title">
+                        <h1>修理メニュー・料金</h1>
+                        <div class="line"></div><span>Menu</span>
+                    </div>
+                    <div class="lg:container mx-auto max-w-screen-lg main-description">
+                        <p>修理の費用・所要日数はカバンの痛み具合や部位、修理の仕上げ方法によって異なりますが、<br class="hidden lg:inline">おおよそ下記の通りとなっております。</p>
+                    </div>
+                    <div class="ivory-bg">
+                        <div class="lg:container mx-auto max-w-screen-lg text-center">
+                            <h2 class="flex items-center justify-center">修理例</h2>
+                            <ul class="menu-list flex flex-wrap">
+                                <li class="menu-list-item w-full lg:w-1/3 caster-special-border" style="position: relative;">
+                                    <div class="caster-badge">ご依頼急増中！</div>
+                                    <img src="assets/img/illust_bag_3.png" alt="キャスター交換">
+                                    <span class="title" style="display: block; font-weight: bold; margin-top: 16px;">キャスターの交換</span>
+                                    <span class="price" style="color: #0a78aa; font-weight: bold; font-size: 18px; margin-top: 4px;">4,000 <span class="unit" style="font-size: 16px;">円〜（2個組）</span></span>
+                                    <div class="caster-appeal">旅行中のトラブルに！<br>専用部品でスムーズな走りに戻します</div>
+                                </li>
+                                <li class="menu-list-item w-full lg:w-1/3">
+                                    <img src="assets/img/illust_bag_1.png" alt="ファスナー交換">
+                                    <span class="title">ファスナーの交換</span>
+                                    <span class="price">4,000 <span class="unit">円〜</span></span>
+                                </li>
+                                <li class="menu-list-item w-full lg:w-1/3">
+                                    <img src="assets/img/illust_bag_2.png" alt="持ち手交換">
+                                    <span class="title">取っ手/肩ひもの交換</span>
+                                    <span class="price">5,000 <span class="unit">円〜</span></span>
+                                </li>
+                            </ul>
+                            <h3 class="flex items-center justify-center">その他の修理例</h3>
+                            <ul class="tags">
+                                <li class="tag">錠前の交換</li>
+                                <li class="tag">ベルトの交換</li>
+                                <li class="tag">補強</li>
+                                <li class="tag">縫直し</li>
+                                <li class="tag">内張の張り替え</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
