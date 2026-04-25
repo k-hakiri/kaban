@@ -369,5 +369,48 @@
             </div>
         </div>
     </div>
+    <script>
+        // ハンバーガーメニュー制御
+        const toggleBtn = document.getElementById('fnMenuToggleButton');
+        const spNav = document.getElementById('spNav');
+
+        // ※spNavは後ほどStep 13で追加するスタイルに依存しますが、スクリプトを先に準備します
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                const isActive = toggleBtn.classList.toggle('menu-active');
+                if (spNav) spNav.classList.toggle('active', isActive);
+            });
+        }
+
+        // スクロールに応じたメニューのハイライト (Scrollspy)
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section, .pg-top');
+            const navLinks = document.querySelectorAll('.head-right-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-100px 0px -70% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === '#' + id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                if (section.id) observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
