@@ -132,6 +132,22 @@
 
         html { scroll-behavior: smooth; }
         section, .pg-top { scroll-margin-top: 80px; }
+
+        /* Heading Refactoring for SEO - デザイン維持のため既存スタイルを完全再現 */
+        .page-title h1, .page-title h2 {
+            font-family: "Noto Sans JP", sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 38px;
+            color: #3c3c32;
+            margin: 0;
+        }
+        @media (min-width: 1080px) {
+            .page-title h1, .page-title h2 {
+                font-size: 32px;
+                line-height: 51px;
+            }
+        }
     </style>
 </head>
 <body>
