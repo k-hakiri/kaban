@@ -8,9 +8,50 @@
     <!-- CSS imports -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;700&display=swap">
+    <style>
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            border-bottom: 1px solid #e6e6e4;
+        }
+    </style>
 </head>
 <body>
-    <h1>波切カバン店 再構築中</h1>
-    <p>現在、サイトをゼロから再構築しています。しばらくお待ちください。</p>
+    <div id="__nuxt">
+        <div id="__layout">
+            <header class="inset-x-0 top-0 z-50">
+                <div class="lg:mx-auto flex flex-1 h-full">
+                    <div class="padding-32 flex-1 flex items-center justify-between">
+                        <a href="#" id="title_logo" class="block flex-none">
+                            <img src="assets/img/logo.svg" alt="波切カバン店" class="head-logo">
+                        </a>
+                        <nav class="head-right-container flex items-center hidden lg:flex">
+                            <a href="#pricing" class="head-right-link font-bold flex items-center justify-center">メニュー・料金</a>
+                            <a href="#repair-flow" class="head-right-link font-bold flex items-center justify-center">修理の流れ</a>
+                            <a href="#voices" class="head-right-link font-bold flex items-center justify-center">お客様の声</a>
+                            <a href="#faq" class="head-right-link font-bold flex items-center justify-center">よくあるご質問</a>
+                            <a href="#store-info" class="head-right-link font-bold flex items-center justify-center">店舗情報</a>
+                        </nav>
+                        <button id="fnMenuToggleButton" class="visible h-full lg:hidden sp-menu-toggle-button" aria-label="メニュー">
+                            <img src="assets/img/menu.svg" alt="メニュー" class="icon icon-menu">
+                        </button>
+                    </div>
+                    <div class="tel-and-details flex-none hidden lg:flex justify-center flex-col h-full padding-32">
+                        <div class="opening">受付時間　平日 10:00～19:00</div>
+                        <div class="tel flex items-center">
+                            <img src="assets/img/local_phone.svg" alt="TEL" class="icon">
+                            <a href="tel:0552413449" class="font-bold">055-241-3449</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content">
+                <h1 style="padding: 100px; text-align: center;">ヘッダー実装完了</h1>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
