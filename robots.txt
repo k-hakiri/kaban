@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hakiri-kaban.web.app/sitemap.xml
+Sitemap: https://xn--lckxdven68lsenehu.com/sitemap.xml
