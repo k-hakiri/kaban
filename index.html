@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>波切カバン店 - 大切に、長く使う。職人の手による丁寧なカバン修理</title>
+    
+    <!-- CSS imports -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;700&display=swap">
+    
+    <style>
+        /* Navbar and scrollspy adjustments */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            border-bottom: 1px solid #e6e6e4;
+        }
+
+        .nav-link.active {
+            border-bottom: 3px solid #0a78aa;
+            color: #0a78aa;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .section-anchor {
+            scroll-margin-top: 100px;
+        }
+
+        /* Mobile Menu Styling */
+        .sp-menu-toggle-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 44px;
+            height: 44px;
+        }
+        .sp-menu-toggle-button .icon-close { display: none; }
+        .sp-menu-toggle-button.menu-active .icon-menu { display: none; }
+        .sp-menu-toggle-button.menu-active .icon-close { display: block; }
+        
+        .sp-nav {
+            position: fixed;
+            top: 71px;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: none;
+            flex-direction: column;
+            padding: 16px 0;
+            z-index: 999;
+        }
+        .sp-nav.active { display: flex; }
+        .sp-nav-link {
+            padding: 16px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+        }
+        .sp-nav-link:last-child { border-bottom: none; }
+
+        /* Voices section styling */
+        .voice-card {
+            background: #fff;
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .voice-card .profile {
+            font-weight: bold;
+            color: #0a78aa;
+            margin-bottom: 8px;
+        }
+
+        /* Caster emphasis styling */
+        .caster-badge {
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            background-color: #e63946;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-5deg);
+            z-index: 10;
+        }
+        .caster-appeal {
+            font-size: 13px;
+            color: #e63946;
+            font-weight: bold;
+            margin-top: 12px;
+            line-height: 1.4;
+        }
+        .caster-special-border {
+            border: 2px solid #e63946 !!important;
+            border-radius: 8px;
+        }
+
+        /* Visual Fixes */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="__nuxt">
+        <div id="__layout">
+            <div>
+                <header class="inset-x-0 top-0 z-50">
+                    <div class="lg:mx-auto flex flex-1 h-full max-w-screen-lg">
+                        <div class="padding-32 flex-1 flex items-center justify-between">
+                            <a href="#" id="title_logo" class="block flex-none">
+                                <img src="assets/img/logo.svg" alt="波切カバン店" class="head-logo">
+                            </a>
+                            <nav class="head-right-container flex items-center hidden lg:flex">
+                                <a href="#pricing" class="head-right-link nav-link font-bold flex items-center justify-center">メニュー・料金</a>
+                                <a href="#repair-flow" class="head-right-link nav-link font-bold flex items-center justify-center">修理の流れ</a>
+                                <a href="#voices" class="head-right-link nav-link font-bold flex items-center justify-center">お客様の声</a>
+                                <a href="#faq" class="head-right-link nav-link font-bold flex items-center justify-center">よくあるご質問</a>
+                                <a href="#store-info" class="head-right-link nav-link font-bold flex items-center justify-center">店舗情報</a>
+                            </nav>
+                            <!-- スマホ用ハンバーガーボタン -->
+                            <button id="fnMenuToggleButton" class="visible h-full lg:hidden sp-menu-toggle-button" aria-label="メニューを開く">
+                                <img src="assets/img/menu.svg" alt="メニュー" class="icon icon-menu">
+                                <img src="assets/img/close.svg" alt="閉じる" class="icon icon-close">
+                            </button>
+                        </div>
+                        <div class="tel-and-details flex-none hidden lg:flex justify-center flex-col h-full padding-32">
+                            <div class="opening">受付時間　平日 10:00～19:00</div>
+                            <div class="tel flex items-center">
+                                <img src="assets/img/local_phone.svg" alt="TEL" class="icon">
+                                <a href="tel:0552413449" class="font-bold">055-241-3449</a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- スマホ用スライドナビ -->
+                <nav id="spNav" class="sp-nav lg:hidden">
+                    <a href="#pricing" class="sp-nav-link sp-nav-item">メニュー・料金</a>
+                    <a href="#repair-flow" class="sp-nav-link sp-nav-item">修理の流れ</a>
+                    <a href="#voices" class="sp-nav-link sp-nav-item">お客様の声</a>
+                    <a href="#faq" class="sp-nav-link sp-nav-item">よくあるご質問</a>
+                    <a href="#store-info" class="sp-nav-link sp-nav-item">店舗情報</a>
+                    <a href="tel:0552413449" class="sp-nav-link" style="color:#0a78aa;">📞 055-241-3449</a>
+                </nav>
+
+                <div class="content">
+                    <!-- Hero Section -->
+                    <div class="pg-top section-anchor" id="top">
+                        <div class="hero-image">
+                            <div class="inner-container lg:container mx-auto max-w-screen-lg h-full flex flex-col justify-end">
+                                <div class="row"><span>山梨のカバン、<em>修理</em>します</span></div>
+                                <p>
+                                    思い出の詰まった大切なカバン、これからも一緒に。<br>
+                                    他店で断られてしまった修理でも、まずは波切カバン店へお任せを。<br class="hidden lg:inline">
+                                    職人の確かな技術で、新品のように使いやすい状態へ丁寧にお直しします。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing Section -->
+                    <section id="pricing" class="section-anchor pg-top">
+                        <div class="page-title">
+                            <h1>修理メニュー・料金</h1>
+                            <div class="line"></div><span>Menu</span>
+                        </div>
+                        <div class="lg:container mx-auto max-w-screen-lg main-description">
+                            <p>修理の費用・所要日数はカバンの痛み具合や部位、修理の仕上げ方法によって異なりますが、<br class="hidden lg:inline">おおよそ下記の通りとなっております。</p>
+                        </div>
+                        <div class="ivory-bg">
+                            <div class="lg:container mx-auto max-w-screen-lg text-center">
+                                <h2 class="flex items-center justify-center">修理例</h2>
+                                <ul class="menu-list flex flex-wrap">
+                                    <li class="menu-list-item w-full lg:w-1/3 caster-special-border" style="position: relative;">
+                                        <div class="caster-badge">ご依頼急増中！</div>
+                                        <img src="assets/img/illust_bag_3.png" alt="キャスター交換">
+                                        <span class="title" style="display: block; font-weight: bold; margin-top: 16px;">キャスターの交換</span>
+                                        <span class="price" style="color: #0a78aa; font-weight: bold; font-size: 18px; margin-top: 4px;">4,000 <span class="unit" style="font-size: 16px;">円〜（2個組）</span></span>
+                                        <div class="caster-appeal">旅行中のトラブルに！<br>専用部品でスムーズな走りに戻します</div>
+                                    </li>
+                                    <li class="menu-list-item w-full lg:w-1/3">
+                                        <img src="assets/img/illust_bag_1.png" alt="ファスナー交換">
+                                        <span class="title">ファスナーの交換</span>
+                                        <span class="price">4,000 <span class="unit">円〜</span></span>
+                                    </li>
+                                    <li class="menu-list-item w-full lg:w-1/3">
+                                        <img src="assets/img/illust_bag_2.png" alt="持ち手交換">
+                                        <span class="title">取っ手/肩ひもの交換</span>
+                                        <span class="price">5,000 <span class="unit">円〜</span></span>
+                                    </li>
+                                </ul>
+                                <h3 class="flex items-center justify-center">その他の修理例</h3>
+                                <ul class="tags">
+                                    <li class="tag">錠前の交換</li>
+                                    <li class="tag">ベルトの交換</li>
+                                    <li class="tag">補強</li>
+                                    <li class="tag">縫直し</li>
+                                    <li class="tag">内張の張り替え</li>
+                                </ul>
+
+                                <h2 class="font-bold flex items-center justify-center" style="margin-top: 48px;">カバンの種類</h2>
+                                <ul class="menu-list flex flex-wrap">
+                                    <li class="menu-list-item menu-list-item-four w-full"><img src="assets/img/illust_bag_4.png" alt="ブランドバッグ"> <span class="title">ブランドバッグ</span></li>
+                                    <li class="menu-list-item menu-list-item-four w-full"><img src="assets/img/illust_bag_5.png" alt="ビジネスバッグ"> <span class="title">ビジネスバッグ</span></li>
+                                    <li class="menu-list-item menu-list-item-four w-full"><img src="assets/img/illust_bag_6.png" alt="ゴルフバッグ"> <span class="title">ゴルフバッグ</span></li>
+                                    <li class="menu-list-item menu-list-item-four w-full"><img src="assets/img/illust_bag_7.png" alt="楽器ケース"> <span class="title">楽器ケース</span></li>
+                                </ul>
+                                <h3 class="flex items-center justify-center">その他の種類</h3>
+                                <ul class="tags">
+                                    <li class="tag">財布</li>
+                                    <li class="tag">名刺入れ</li>
+                                    <li class="tag">定期入れ</li>
+                                    <li class="tag">肩掛け</li>
+                                    <li class="tag">リュック</li>
+                                    <li class="tag">サブバッグ</li>
+                                    <li class="tag">ランドセル</li>
+                                    <li class="tag">旅行カバン</li>
+                                    <li class="tag">ヘッドカバー</li>
+                                    <li class="tag">宝石ケース</li>
+                                    <li class="tag">革製品</li>
+                                    <li class="tag">オーダーメイド品の手直し</li>
+                                </ul>
+                                <section style="margin-top: 32px;">
+                                    <span class="remark">上記以外のカバン・バッグ・革製品についても、お気軽にご相談ください。<br>「これは直せるのかな？」と思ったら、まずはお電話でお問い合わせください。</span>
+                                </section>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Flow Section -->
+                    <section id="repair-flow" class="section-anchor pg-flow">
+                        <div class="page-title">
+                            <h1>修理の流れ</h1>
+                            <div class="line"></div><span>Flow</span>
+                        </div>
+                        <ol class="mx-auto max-w-screen-lg flows">
+                            <li class="flex flex-wrap mx-auto">
+                                <div class="illust-container"><img src="assets/img/illust_flow_1.png" alt="" class="illust"></div>
+                                <div class="description-container">
+                                    <span class="font-bold">1.確認、お見積もり</span>
+                                    <p>修理品を当店までお持ちください。<br>修理が必要な箇所、不具合について確認させていただきます。</p>
+                                </div>
+                            </li>
+                            <hr>
+                            <li class="flex flex-wrap mx-auto">
+                                <div class="illust-container"><img src="assets/img/illust_flow_2.png" alt="" class="illust"></div>
+                                <div class="description-container">
+                                    <span class="font-bold">2.ご依頼の確定</span>
+                                    <p>修理品を確認後、概算の金額や仕上がりまでの時間をお伝えしますので、問題がなければ修理品を預からせていただきます。<br>ご予算に合わない場合や修理不能の場合は、修理を行いませんので代金は不要です。<br>ご依頼が確定した場合、修理完了のご連絡をさせていただくために、ご連絡先を伺います。</p>
+                                </div>
+                            </li>
+                            <hr>
+                            <li class="flex flex-wrap mx-auto">
+                                <div class="illust-container"><img src="assets/img/illust_flow_3.png" alt="" class="illust"></div>
+                                <div class="description-container">
+                                    <span class="font-bold">3.修理作業</span>
+                                    <p>当方にて修理作業を行います。<br>※修理状況につきましては、いつでもお電話にてご確認いただけます。</p>
+                                </div>
+                            </li>
+                            <hr>
+                            <li class="flex flex-wrap mx-auto">
+                                <div class="illust-container"><img src="assets/img/illust_flow_4.png" alt="" class="illust"></div>
+                                <div class="description-container">
+                                    <span class="font-bold">4.修理完了</span>
+                                    <p>修理が完了しましたら、ご連絡させていただきます。<br>お品物と引き換えに修理の代金を頂戴します。</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <!-- Voices Section -->
+                    <section id="voices" class="section-anchor pg-faq" style="background-color: #faf5f0; padding: 64px 0;">
+                        <div class="mx-auto max-w-screen-lg">
+                            <div class="page-title">
+                                <h1>お客様の声</h1>
+                                <div class="line"></div><span>Voices</span>
+                            </div>
+                            <div class="questions" style="margin-top: 32px;">
+                                <div class="voice-card">
+                                    <div class="profile">40代 女性（キャリーバッグのキャスター交換）</div>
+                                    <p>長年愛用していたキャリーバッグの車輪がすり減ってしまい、真っ直ぐ進まなくなって困っていました。波切カバン店さんに相談したところ、迅速に新しいキャスターに交換していただき、新品のようにスムーズに動くようになりました。お気に入りのカバンだったので、また次の旅行に持っていけるのが嬉しいです。</p>
+                                </div>
+                                <div class="voice-card">
+                                    <div class="profile">50代 男性（ビジネスバッグの持ち手交換）</div>
+                                    <p>毎日使っているビジネスバッグの持ち手がちぎれそうになっていました。他店では断られてしまったのですが、こちらでは丁寧に補強と交換をしていただき、まだまだ長く使えそうです。職人さんの確かな技術に感謝しています。修理の途中経過も電話で優しく教えていただき安心できました。</p>
+                                </div>
+                                <div class="voice-card">
+                                    <div class="profile">60代 女性（ブランドバッグの内張り修理）</div>
+                                    <p>20年ほど使ってきた大切なブランドバッグの内張りがボロボロとはがれてしまい、見た目が気になって使うのをやめていました。波切カバン店さんにお願いしたところ、元の雰囲気を大切にしながら丁寧に張り替えていただき、また堂々と使えるようになりました。長く大切にしてきたカバンを直してもらえて、本当によかったです。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- FAQ Section -->
+                    <section id="faq" class="section-anchor pg-faq" style="padding-top: 64px;">
+                        <div class="mx-auto max-w-screen-lg">
+                            <div class="page-title">
+                                <h1>よくあるご質問</h1>
+                                <div class="line"></div><span>FAQ</span>
+                            </div>
+                            <div class="questions">
+                                <ol>
+                                    <li>
+                                        <div class="q"><img src="assets/img/icon_q.svg" alt="Q" class="icon"> <span>どんなものが直せますか？</span></div>
+                                        <div class="a"><img src="assets/img/icon_a.svg" alt="A" class="icon">
+                                            <p>カバン・バッグ類全般の修理に対応しています。ファスナー・チャックの交換、持ち手・肩ひもの修理・交換、キャスター（車輪）の交換、内張りの張り替え、錠前の交換、縫い直し・補強など、幅広くお受けしています。まずはお気軽にお電話にてご相談ください。</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q"><img src="assets/img/icon_q.svg" alt="Q" class="icon"> <span>修理の期間はどのぐらいかかりますか？</span></div>
+                                        <div class="a"><img src="assets/img/icon_a.svg" alt="A" class="icon">
+                                            <p>修理の内容によって異なります。簡単なものであれば1週間程度、内張りの張り替えや複雑な作業の場合は2〜4週間程度が目安です。混み具合によっても変わりますので、詳しくはお電話にてご相談ください。</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q"><img src="assets/img/icon_q.svg" alt="Q" class="icon"> <span>見積もりは無料ですか？</span></div>
+                                        <div class="a"><img src="assets/img/icon_a.svg" alt="A" class="icon">
+                                            <p>はい、お見積もりは無料です。修理品をお持ちいただければ、内容を確認した上で概算の金額と所要日数をお伝えします。お見積もりの内容にご納得いただけない場合、代金は一切かかりません。</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q"><img src="assets/img/icon_q.svg" alt="Q" class="icon"> <span>他のお店で断られたのですが、修理を引き受けていただけますか？</span></div>
+                                        <div class="a"><img src="assets/img/icon_a.svg" alt="A" class="icon">
+                                            <p>他店で断られてご来店いただく方も多くいらっしゃいます。これまでの実績では、修理可能な場合が多くありました。まずはお電話またはご来店の上、ご相談ください。</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q"><img src="assets/img/icon_q.svg" alt="Q" class="icon"> <span>ブランドバッグの修理もお願いできますか？</span></div>
+                                        <div class="a"><img src="assets/img/icon_a.svg" alt="A" class="icon">
+                                            <p>はい、ヴィトン・シャネル・グッチ・プラダ・エルメスなどのブランドバッグも対応しております。ただし、修理に使用する金具や部材は汎用品となりますので、ブランド純正品への交換はできかねる場合があります。詳しくはご相談ください。</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q"><img src="assets/img/icon_q.svg" alt="Q" class="icon"> <span>大切なカバンなので、修理後の仕上がりが気になります</span></div>
+                                        <div class="a"><img src="assets/img/icon_a.svg" alt="A" class="icon">
+                                            <p>修理を行う前に、仕上がりについてのご要望をお気軽にお申し付けください。なるべくご希望に沿う形で修理いたします。また、修理が完成した際には引き渡し前にご確認いただくことも可能です。</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Store Info Section -->
+                    <section id="store-info" class="section-anchor pg-store-info">
+                        <div class="page-title">
+                            <h1>店舗情報</h1>
+                            <div class="line"></div><span>Information</span>
+                        </div>
+                        <div class="row">
+                            <div class="store-info-container row-inner-container mx-auto max-w-screen-lg text-center">
+                                <div class="w-full">
+                                    <img src="assets/img/shop_image.jpg" alt="店舗の外観" class="photo">
+                                    <span class="store-name hidden lg:block">波切カバン店</span>
+                                    <div class="tel-container">
+                                        <a href="tel:0552413449"><img src="assets/img/local_phone_blue.svg" alt="TEL" class="icon"> <span>055-241-3449</span></a>
+                                    </div>
+                                    <ul>
+                                        <li>住所：山梨県甲府市住吉5丁目18-25</li>
+                                        <li>営業時間：10:00〜19:00</li>
+                                        <li>営業日：月〜金</li>
+                                        <li>定休日：土日、祝日</li>
+                                        <li>駐車場：あり(2台)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row bg-ivory">
+                            <div class="row-inner-container access">
+                                <h2 class="font-bold">アクセス</h2>
+                                <div class="foo flex flex-wrap mx-auto max-w-screen-lg">
+                                    <div class="map-view">
+                                        <div class="google-maps">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.6666606860517!2d138.5738743160542!3d35.63594334006012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601bfa1e4bbd8175%3A0xcdcc5344410b09f6!2z5rOi5YiHIOOCq-ODkOODsyDlupcg5L-u55CGIOW3peaIvw!5e0!3m2!1sja!2sjp!4v1600269156664!5m2!1sja!2sjp" width="100%" height="300" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0" style="border:0"></iframe>
+                                        </div>
+                                    </div>
+                                    <div class="address">
+                                        <p><span class="bold">〒400-0851<br>山梨県甲府市住吉5丁目18-25</span><br><br>県道精進湖線沿い、ほっともっと、ナオル薬局と同じ通りです。</p>
+                                        <div class="button-container"><a href="https://goo.gl/maps/5gdXy1NC1v3NZ8jB7" target="_blank" class="button">Google Mapで見る</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <footer>
+                    <div class="contact-us">
+                        <div class="mx-auto max-w-screen-lg flex flex-col items-center justify-center">
+                            <span class="description">まずはお電話にてご相談ください</span>
+                            <a href="tel:0552413449" class="tel flex items-center"><img src="assets/img/local_phone.svg" alt="TEL" class="icon"> <span class="font-bold">055-241-3449</span></a>
+                            <img src="assets/img/illust_shopkeeper.png" alt="" class="shopkeeper hidden lg:block">
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <div class="lg:container lg:mx-auto flex flex-col items-center justify-center h-full">
+                            <div>Copyright (C) 2026 波切カバン店<br class="lg:hidden"><span class="lg:inline">&nbsp;</span>all rights reserved.</div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ハンバーガーメニュー制御
+        const toggleBtn = document.getElementById('fnMenuToggleButton');
+        const spNav = document.getElementById('spNav');
+
+        toggleBtn.addEventListener('click', () => {
+            const isActive = toggleBtn.classList.toggle('menu-active');
+            spNav.classList.toggle('active', isActive);
+        });
+
+        // スマホナビのリンクをタップしたらメニューを閉じる
+        document.querySelectorAll('.sp-nav-item').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleBtn.classList.remove('menu-active');
+                spNav.classList.remove('active');
+            });
+        });
+
+        // Scrollspy
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section-anchor');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-100px 0px -70% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === '#' + id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
