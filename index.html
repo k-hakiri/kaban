@@ -51,10 +51,10 @@
     </script>
 
     <!-- Favicon Settings -->
-    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 
     <!-- CSS imports -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;700&display=swap">
     <style>
@@ -152,7 +152,17 @@
 
         section,
         .pg-top {
-            scroll-margin-top: 80px;
+            scroll-margin-top: 71px;
+            /* スマホのヘッダー高さ */
+        }
+
+        @media (min-width: 1080px) {
+
+            section,
+            .pg-top {
+                scroll-margin-top: 96px;
+                /* デスクトップのヘッダー高さ */
+            }
         }
 
         /* Heading Refactoring for SEO - デザイン維持のため既存スタイルを完全再現 */
@@ -230,7 +240,7 @@
                 <div class="lg:mx-auto flex flex-1 h-full">
                     <div class="padding-32 flex-1 flex items-center justify-between">
                         <a href="/" id="title_logo" class="block flex-none">
-                            <img src="assets/img/logo.svg" alt="波切カバン店" class="head-logo">
+                            <img src="/assets/img/logo.svg" alt="波切カバン店" class="head-logo">
                         </a>
                         <nav class="head-right-container flex items-center hidden lg:flex">
                             <a href="/pricing"
@@ -246,13 +256,13 @@
                         </nav>
                         <button id="fnMenuToggleButton" class="visible h-full lg:hidden sp-menu-toggle-button"
                             aria-label="メニュー">
-                            <img src="assets/img/menu.svg" alt="メニュー" class="icon icon-menu">
+                            <img src="/assets/img/menu.svg" alt="メニュー" class="icon icon-menu">
                         </button>
                     </div>
                     <div class="tel-and-details flex-none hidden lg:flex justify-center flex-col h-full padding-32">
                         <div class="opening">受付時間　平日 10:00～19:00</div>
                         <div class="tel flex items-center">
-                            <img src="assets/img/local_phone.svg" alt="TEL" class="icon">
+                            <img src="/assets/img/local_phone.svg" alt="TEL" class="icon">
                             <a href="tel:0552413449" class="font-bold">055-241-3449</a>
                         </div>
                     </div>
@@ -301,7 +311,7 @@
                                 <li class="menu-list-item w-full lg:w-1/4 menu-list-item-four caster-special-border"
                                     style="position: relative;">
                                     <div class="caster-badge">ご依頼急増中！</div>
-                                    <img src="assets/img/illust_bag_3.png" alt="キャスター交換" loading="lazy">
+                                    <img src="/assets/img/illust_bag_3.png" alt="キャスター交換">
                                     <span class="title"
                                         style="display: block; font-weight: bold; margin-top: 16px;">キャスターの交換</span>
                                     <span class="price"
@@ -310,17 +320,17 @@
                                     <div class="caster-appeal">旅行中のトラブルに！<br>専用部品でスムーズな走りに戻します</div>
                                 </li>
                                 <li class="menu-list-item w-full lg:w-1/4 menu-list-item-four">
-                                    <img src="assets/img/illust_bag_1.png" alt="ファスナー交換" loading="lazy">
+                                    <img src="/assets/img/illust_bag_1.png" alt="ファスナー交換">
                                     <span class="title">ファスナーの交換</span>
                                     <span class="price">4,000 <span class="unit">円〜</span></span>
                                 </li>
                                 <li class="menu-list-item w-full lg:w-1/4 menu-list-item-four">
-                                    <img src="assets/img/illust_bag_2.png" alt="持ち手交換" loading="lazy">
+                                    <img src="/assets/img/illust_bag_2.png" alt="持ち手交換">
                                     <span class="title">取っ手/肩ひもの交換</span>
                                     <span class="price">5,000 <span class="unit">円〜</span></span>
                                 </li>
                                 <li class="menu-list-item w-full lg:w-1/4 menu-list-item-four">
-                                    <img src="assets/img/illust_bag_inner.png" alt="内張りの張替え" loading="lazy">
+                                    <img src="/assets/img/illust_bag_inner.png" alt="内張りの張替え">
                                     <span class="title">内装・内張りの張り替え</span>
                                     <span class="price">8,000 <span class="unit">円〜</span></span>
                                 </li>
@@ -339,18 +349,18 @@
                                 <li class="menu-list-item menu-list-item-four w-full caster-special-border"
                                     style="position: relative;">
                                     <div class="caster-badge">修理実績多数！</div>
-                                    <img src="assets/img/illust_bag_4.png" alt="ブランドバッグ" loading="lazy">
+                                    <img src="/assets/img/illust_bag_4.png" alt="ブランドバッグ">
                                     <span class="title">ブランドバッグ</span>
                                     <div class="caster-appeal">確かな技術で蘇る。<br>ハイブランドの修理実績も豊富です</div>
                                 </li>
                                 <li class="menu-list-item menu-list-item-four w-full"><img
-                                        src="assets/img/illust_bag_wallet.png" alt="財布" loading="lazy"> <span
+                                        src="/assets/img/illust_bag_wallet.png" alt="財布"> <span
                                         class="title">財布・小物</span></li>
                                 <li class="menu-list-item menu-list-item-four w-full"><img
-                                        src="assets/img/illust_bag_suitcase.png" alt="キャリーケース" loading="lazy"> <span
+                                        src="/assets/img/illust_bag_suitcase.png" alt="キャリーケース"> <span
                                         class="title">キャリーケース</span></li>
                                 <li class="menu-list-item menu-list-item-four w-full"><img
-                                        src="assets/img/illust_bag_5.png" alt="ビジネスバッグ" loading="lazy"> <span
+                                        src="/assets/img/illust_bag_5.png" alt="ビジネスバッグ"> <span
                                         class="title">ビジネスバッグ</span>
                                 </li>
                             </ul>
@@ -370,8 +380,8 @@
                     </div>
                     <ol class="mx-auto max-w-screen-lg flows">
                         <li class="flex flex-wrap mx-auto">
-                            <div class="illust-container"><img src="assets/img/illust_flow_1.png" alt="" class="illust"
-                                    loading="lazy">
+                            <div class="illust-container"><img src="/assets/img/illust_flow_1.png" alt=""
+                                    class="illust">
                             </div>
                             <div class="description-container">
                                 <span class="font-bold">1.確認、お見積もり</span>
@@ -380,8 +390,8 @@
                         </li>
                         <hr>
                         <li class="flex flex-wrap mx-auto">
-                            <div class="illust-container"><img src="assets/img/illust_flow_2.png" alt="" class="illust"
-                                    loading="lazy">
+                            <div class="illust-container"><img src="/assets/img/illust_flow_2.png" alt=""
+                                    class="illust">
                             </div>
                             <div class="description-container">
                                 <span class="font-bold">2.ご依頼の確定・お預かり</span>
@@ -394,8 +404,8 @@
                         </li>
                         <hr>
                         <li class="flex flex-wrap mx-auto">
-                            <div class="illust-container"><img src="assets/img/illust_flow_3.png" alt="" class="illust"
-                                    loading="lazy">
+                            <div class="illust-container"><img src="/assets/img/illust_flow_3.png" alt=""
+                                    class="illust">
                             </div>
                             <div class="description-container">
                                 <span class="font-bold">3.修理作業</span>
@@ -404,8 +414,8 @@
                         </li>
                         <hr>
                         <li class="flex flex-wrap mx-auto">
-                            <div class="illust-container"><img src="assets/img/illust_flow_4.png" alt="" class="illust"
-                                    loading="lazy">
+                            <div class="illust-container"><img src="/assets/img/illust_flow_4.png" alt=""
+                                    class="illust">
                             </div>
                             <div class="description-container">
                                 <span class="font-bold">4.修理完了</span>
@@ -442,7 +452,7 @@
                         <div class="google-reviews-action" style="margin-top: 48px; text-align: center;">
                             <p style="font-size: 0.9em; color: #666; margin-bottom: 16px;">Googleマップでも高い評価をいただいております</p>
                             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
-                                <a href="https://www.google.com/maps/search/?api=1&query=波切カバン店+山梨県甲府市住吉5-18-25"
+                                <a href="https://g.page/r/CfYJC0FEU8zNEBM/"
                                     target="_blank"
                                     style="display: inline-flex; align-items: center; background: #fff; border: 1px solid #ccc; color: #333; padding: 12px 24px; border-radius: 9999px; font-weight: bold; text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: background 0.3s;">
                                     <span style="margin-right: 8px;">★</span> Googleでクチコミを読む
@@ -468,66 +478,66 @@
                         <div class="questions">
                             <ol>
                                 <li>
-                                    <div class="q"><img src="assets/img/icon_q.svg" alt="Q" class="icon" loading="lazy">
+                                    <div class="q"><img src="/assets/img/icon_q.svg" alt="Q" class="icon">
                                         <span>どんなものが直せますか？</span>
                                     </div>
-                                    <div class="a"><img src="assets/img/icon_a.svg" alt="A" class="icon" loading="lazy">
+                                    <div class="a"><img src="/assets/img/icon_a.svg" alt="A" class="icon">
                                         <p>カバン・バッグ類全般の修理に対応しています。ファスナー・チャックの交換、持ち手・肩ひもの修理・交換、キャスター（車輪）の交換、内張りの張り替え、錠前の交換、縫い直し・補強など、幅広くお受けしています。まずはお気軽にお電話にてご相談ください。
                                         </p>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q"><img src="assets/img/icon_q.svg" alt="Q" class="icon" loading="lazy">
+                                    <div class="q"><img src="/assets/img/icon_q.svg" alt="Q" class="icon">
                                         <span>修理の期間はどのぐらいかかりますか？</span>
                                     </div>
-                                    <div class="a"><img src="assets/img/icon_a.svg" alt="A" class="icon" loading="lazy">
+                                    <div class="a"><img src="/assets/img/icon_a.svg" alt="A" class="icon">
                                         <p>修理の内容によって異なります。簡単なものであれば1週間程度、内張りの張り替えや複雑な作業の場合は2〜4週間程度が目安です。混み具合によっても変わりますので、詳しくはお電話にてご相談ください。
                                         </p>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q"><img src="assets/img/icon_q.svg" alt="Q" class="icon" loading="lazy">
+                                    <div class="q"><img src="/assets/img/icon_q.svg" alt="Q" class="icon">
                                         <span>見積もりは無料ですか？</span>
                                     </div>
-                                    <div class="a"><img src="assets/img/icon_a.svg" alt="A" class="icon" loading="lazy">
+                                    <div class="a"><img src="/assets/img/icon_a.svg" alt="A" class="icon">
                                         <p>はい、<strong>お見積もりは完全に無料</strong>です。修理品をお持ちいただければ、職人がその場で状態を確認し、概算の金額をお伝えします。内容にご納得いただけない場合、料金は一切かかりませんのでご安心ください。
                                         </p>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q"><img src="assets/img/icon_q.svg" alt="Q" class="icon" loading="lazy">
+                                    <div class="q"><img src="/assets/img/icon_q.svg" alt="Q" class="icon">
                                         <span>遠方から郵送で修理をお願いできますか？</span>
                                     </div>
-                                    <div class="a"><img src="assets/img/icon_a.svg" alt="A" class="icon" loading="lazy">
+                                    <div class="a"><img src="/assets/img/icon_a.svg" alt="A" class="icon">
                                         <p>基本的にはご来店をお願いしておりますが、遠方でどうしてもお越しいただくのが難しい場合は、<strong>まずはお電話にてご相談ください。</strong>修理箇所の写真を確認させていただくなどして、郵送での対応が可能か判断させていただきます。
                                         </p>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q"><img src="assets/img/icon_q.svg" alt="Q" class="icon" loading="lazy">
+                                    <div class="q"><img src="/assets/img/icon_q.svg" alt="Q" class="icon">
                                         <span>ハイブランドのカバンでも修理してもらえますか？</span>
                                     </div>
-                                    <div class="a"><img src="assets/img/icon_a.svg" alt="A" class="icon" loading="lazy">
+                                    <div class="a"><img src="/assets/img/icon_a.svg" alt="A" class="icon">
                                         <p>ハイブランドの製品は特殊な製法や部材が使用されていることが多いため、<strong>修理内容によってはお受けできない場合や、仕上がりに制限が出る場合がございます。</strong>
                                             職人が一点ずつ状態を確認し、可能な範囲で最善の対応をご提案させていただきます。
                                         </p>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q"><img src="assets/img/icon_q.svg" alt="Q" class="icon" loading="lazy">
+                                    <div class="q"><img src="/assets/img/icon_q.svg" alt="Q" class="icon">
                                         <span>他のお店で断られたのですが、修理を引き受けていただけますか？</span>
                                     </div>
-                                    <div class="a"><img src="assets/img/icon_a.svg" alt="A" class="icon" loading="lazy">
+                                    <div class="a"><img src="/assets/img/icon_a.svg" alt="A" class="icon">
                                         <p>他店で断られてご来店いただく方も多くいらっしゃいます。これまでの実績では、修理可能な場合が多くありました。まずはお電話またはご来店の上、ご相談ください。
                                         </p>
                                     </div>
                                 </li>
 
                                 <li>
-                                    <div class="q"><img src="assets/img/icon_q.svg" alt="Q" class="icon" loading="lazy">
+                                    <div class="q"><img src="/assets/img/icon_q.svg" alt="Q" class="icon">
                                         <span>大切なカバンなので、修理後の仕上がりが気になります</span>
                                     </div>
-                                    <div class="a"><img src="assets/img/icon_a.svg" alt="A" class="icon" loading="lazy">
+                                    <div class="a"><img src="/assets/img/icon_a.svg" alt="A" class="icon">
                                         <p>修理を行う前に、仕上がりについてのご要望をお気軽にお申し付けください。なるべくご希望に沿う形で修理いたします。また、修理が完成した際には引き渡し前にご確認いただくことも可能です。
                                         </p>
                                     </div>
@@ -548,10 +558,10 @@
                     <div class="row">
                         <div class="store-info-container row-inner-container mx-auto max-w-screen-lg text-center">
                             <div class="w-full">
-                                <img src="assets/img/shop_image.jpg" alt="店舗の外観" class="photo">
+                                <img src="/assets/img/shop_image.jpg" alt="店舗の外観" class="photo">
                                 <span class="store-name hidden lg:block">波切カバン店</span>
                                 <div class="tel-container">
-                                    <a href="tel:0552413449"><img src="assets/img/local_phone_blue.svg" alt="TEL"
+                                    <a href="tel:0552413449"><img src="/assets/img/local_phone_blue.svg" alt="TEL"
                                             class="icon"> <span>055-241-3449</span></a>
                                 </div>
                                 <ul>
@@ -571,7 +581,7 @@
                             <div
                                 class="flex flex-col md:flex-row items-center gap-12 bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-100">
                                 <div class="md:w-1/4 flex justify-center">
-                                    <img src="assets/img/illust_flow_2.png" alt="店主"
+                                    <img src="/assets/img/illust_flow_2.png" alt="店主"
                                         style="width: 160px; height: auto; border-radius: 50%; background: #e1f5fe; padding: 15px;">
                                 </div>
                                 <div class="md:w-3/4">
@@ -612,7 +622,7 @@
                         <div class="row-inner-container access">
                             <h2 class="font-bold">駐車場のご案内</h2>
                             <div class="foo flex flex-wrap mx-auto max-w-screen-lg">
-                                <div class="parking"><img src="assets/img/parking_map.jpg" alt="駐車場案内図"></div>
+                                <div class="parking"><img src="/assets/img/parking_map.jpg" alt="駐車場案内図"></div>
                                 <div class="address">
                                     <p>店舗の北の2軒隣りに駐車場があります。</p>
                                 </div>
@@ -636,9 +646,10 @@
                     <div class="contact-us">
                         <div class="mx-auto max-w-screen-lg flex flex-col items-center justify-center">
                             <span class="description">まずはお電話にてご相談ください</span>
-                            <a href="tel:0552413449" class="tel flex items-center"><img src="assets/img/local_phone.svg"
-                                    alt="TEL" class="icon"> <span class="font-bold">055-241-3449</span></a>
-                            <img src="assets/img/illust_shopkeeper.png" alt="" class="shopkeeper hidden lg:block">
+                            <a href="tel:0552413449" class="tel flex items-center"><img
+                                    src="/assets/img/local_phone.svg" alt="TEL" class="icon"> <span
+                                    class="font-bold">055-241-3449</span></a>
+                            <img src="/assets/img/illust_shopkeeper.png" alt="" class="shopkeeper hidden lg:block">
                         </div>
                     </div>
                     <div class="copyright">
@@ -653,7 +664,7 @@
     </div>
     <!-- Floating Phone Button for Mobile (Option B) -->
     <a href="tel:0552413449" class="floating-tel-button" aria-label="電話をかける">
-        <img src="assets/img/local_phone.svg" alt="">
+        <img src="/assets/img/local_phone.svg" alt="">
     </a>
 
     <script>
@@ -667,38 +678,62 @@
             '/store-info': { id: 'store-info', title: '店舗情報 | 波切カバン店' }
         };
 
+        // ヘッダーの高さを取得する関数
+        function getHeaderHeight() {
+            const header = document.querySelector('header');
+            return header ? header.offsetHeight : 80;
+        }
+
+        // パスを正規化する関数
+        function normalizePath(path) {
+            if (!path || path === '/') return '/';
+            // 末尾のスラッシュを削除し、小文字に統一
+            return path.replace(/\/$/, '').toLowerCase();
+        }
+
         // 指定されたパスに基づいて表示を更新する関数
-        function navigateToPath(path, pushState = true) {
-            const config = routeConfig[path] || routeConfig['/'];
+        function navigateToPath(path, pushState = true, isInitial = false) {
+            const normalizedPath = normalizePath(path);
+            const config = routeConfig[normalizedPath] || routeConfig['/'];
             const targetElement = document.getElementById(config.id);
 
             if (targetElement) {
-                // スムーズスクロールで移動
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+                const headerHeight = getHeaderHeight();
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                if (isInitial) {
+                    // 初回アクセス時はスムーズスクロールを一時的に無効化して確実に着地させる
+                    document.documentElement.style.scrollBehavior = 'auto';
+                    window.scrollTo(0, targetPosition);
+                    // スクロール完了後にスムーズスクロールを戻す
+                    setTimeout(() => {
+                        document.documentElement.style.scrollBehavior = 'smooth';
+                    }, 100);
+                } else {
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
 
-            // URLとタイトルの更新
             if (pushState) {
                 history.pushState(null, config.title, path);
             }
             document.title = config.title;
-            updateActiveLink(path);
+            updateActiveLink(normalizedPath);
         }
 
-        // アクティブなメニューのハイライトを更新
         function updateActiveLink(path) {
             document.querySelectorAll('.head-right-link').forEach(link => {
-                link.classList.toggle('active', link.getAttribute('href') === path);
+                const linkPath = normalizePath(link.getAttribute('href'));
+                link.classList.toggle('active', linkPath === path);
             });
         }
 
-        // ハンバーガーメニュー制御
+        // ハンバーガーメニュー
         const toggleBtn = document.getElementById('fnMenuToggleButton');
         const spNav = document.getElementById('spNav');
-
         if (toggleBtn) {
             toggleBtn.addEventListener('click', () => {
                 const isActive = toggleBtn.classList.toggle('menu-active');
@@ -706,61 +741,48 @@
             });
         }
 
-        // リンククリックイベントの委譲
+        // リンククリック
         document.addEventListener('click', (e) => {
             const link = e.target.closest('a');
             if (!link) return;
-
             const href = link.getAttribute('href');
-            // 内部リンクかつ外部リンク（tel等）でない場合
             if (href && href.startsWith('/') && !href.startsWith('//')) {
                 e.preventDefault();
                 navigateToPath(href);
-
-                // スマホメニューが開いていれば閉じる
                 if (toggleBtn) toggleBtn.classList.remove('menu-active');
                 if (spNav) spNav.classList.remove('active');
             }
         });
 
-        // 戻る・進むボタンの制御
         window.addEventListener('popstate', () => {
             navigateToPath(window.location.pathname, false);
         });
 
-        // 初期読み込み時の処理
+        // 初期スクロール制御
+        function handleInitialScroll() {
+            const path = window.location.hash ? window.location.hash.replace('#', '/') : window.location.pathname;
+            if (path !== '/' && path !== '') {
+                navigateToPath(path, false, true);
+            }
+        }
+
+        // DOM構築後と全リソース読み込み後の両方でチェック
+        document.addEventListener('DOMContentLoaded', handleInitialScroll);
+        window.addEventListener('load', handleInitialScroll);
+
+        // スクロール監視
         document.addEventListener('DOMContentLoaded', () => {
-            const currentPath = window.location.pathname;
-            // 少し遅延させて確実にスクロールさせる（要素のレンダリング待ち）
-            setTimeout(() => {
-                navigateToPath(currentPath, false);
-            }, 100);
-
-            // スクロールに応じたメニューのハイライト (Scrollspy)
             const sections = document.querySelectorAll('section, .pg-top');
-            const observerOptions = {
-                root: null,
-                rootMargin: '-100px 0px -70% 0px',
-                threshold: 0
-            };
-
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const id = entry.target.getAttribute('id');
                         const path = Object.keys(routeConfig).find(key => routeConfig[key].id === id);
-                        if (path) {
-                            updateActiveLink(path);
-                            // スクロールで自動的にURLを変える場合はここでhistory.replaceStateを使う（任意）
-                            // history.replaceState(null, routeConfig[path].title, path);
-                        }
+                        if (path) updateActiveLink(path);
                     }
                 });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                if (section.id) observer.observe(section);
-            });
+            }, { rootMargin: '-100px 0px -70% 0px' });
+            sections.forEach(section => { if (section.id) observer.observe(section); });
         });
     </script>
 </body>
