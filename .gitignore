@@ -1,0 +1,5 @@
+node_modules/
+.firebase/
+firepit-log.txt
+.DS_Store
+firebase
