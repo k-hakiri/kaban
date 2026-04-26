@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "hakiri-kaban",
     "public": ".",
     "ignore": [
       "firebase.json",

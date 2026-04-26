@@ -157,11 +157,17 @@
         }
 
         @media (min-width: 1080px) {
-
             section,
             .pg-top {
                 scroll-margin-top: 96px;
                 /* デスクトップのヘッダー高さ */
+                padding-top: 80px;
+                /* コンテンツがヘッダーに被らないための余白 */
+            }
+
+            /* ヒーローセクション（一番上）だけは余白を付けない */
+            #top.pg-top {
+                padding-top: 0;
             }
         }
 
@@ -426,7 +432,7 @@
                 </section>
 
                 <!-- Voices Section -->
-                <section id="voices" class="pg-faq" style="background-color: #faf5f0; padding: 64px 0;">
+                <section id="voices" class="pg-faq" style="background-color: #faf5f0; padding-bottom: 64px;">
                     <div class="mx-auto max-w-screen-lg">
                         <div class="page-title">
                             <h2>お客様の声</h2>
@@ -469,7 +475,7 @@
 
 
                 <!-- FAQ Section -->
-                <section id="faq" class="pg-faq" style="padding-top: 64px;">
+                <section id="faq" class="pg-faq">
                     <div class="mx-auto max-w-screen-lg">
                         <div class="page-title">
                             <h2>よくあるご質問</h2>
