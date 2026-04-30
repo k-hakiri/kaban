@@ -2,5 +2,8 @@
   "dependencies": {
     "firebase": "^12.12.1",
     "firebase-tools": "^15.15.0"
+  },
+  "scripts": {
+    "build": "node build.js"
   }
 }
