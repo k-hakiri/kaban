@@ -3,3 +3,10 @@ node_modules/
 firepit-log.txt
 .DS_Store
 firebase
+.config/
+sitemap.xml
+faq/
+pricing/
+repair-flow/
+store-info/
+voices/

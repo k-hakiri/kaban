@@ -7,7 +7,10 @@
       "**/.*",
       "**/node_modules/**",
       "docs/**",
-      "GEMINI.md"
+      "GEMINI.md",
+      "build.js",
+      "package.json",
+      "package-lock.json"
     ],
     "cleanUrls": true,
     "rewrites": [
