@@ -10,7 +10,10 @@
       "GEMINI.md",
       "build.js",
       "package.json",
-      "package-lock.json"
+      "package-lock.json",
+      "README.md",
+      "deploy.sh",
+      "firepit-log.txt"
     ],
     "cleanUrls": true,
     "rewrites": [
