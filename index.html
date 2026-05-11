@@ -796,11 +796,51 @@
             });
         }
 
+        function getPhoneClickLocation(link) {
+            if (link.closest('.floating-tel-button')) return 'floating_button';
+            if (link.closest('#spNav')) return 'mobile_menu';
+            if (link.closest('.contact-us')) return 'footer_cta';
+            if (link.closest('.store-info-container')) return 'store_info';
+            if (link.closest('.tel-and-details')) return 'header_desktop';
+            return 'unknown';
+        }
+
+        function getPhoneLinkText(link) {
+            const text = (link.textContent || '').trim();
+            if (text) return text;
+
+            const ariaLabel = link.getAttribute('aria-label');
+            if (ariaLabel) return ariaLabel.trim();
+
+            return '';
+        }
+
+        function trackPhoneCall(link, href) {
+            const eventParams = {
+                click_location: getPhoneClickLocation(link),
+                link_url: href,
+                link_text: getPhoneLinkText(link),
+                page_path: window.location.pathname
+            };
+
+            const gtagFn = typeof window.gtag === 'function'
+                ? window.gtag
+                : (typeof gtag === 'function' ? gtag : null);
+
+            if (gtagFn) {
+                gtagFn('event', 'phone_call', eventParams);
+            }
+        }
+
         // リンククリック
         document.addEventListener('click', (e) => {
             const link = e.target.closest('a');
             if (!link) return;
             const href = link.getAttribute('href');
+            if (href && href.startsWith('tel:')) {
+                trackPhoneCall(link, href);
+                return;
+            }
             if (href && href.startsWith('/') && !href.startsWith('//')) {
                 e.preventDefault();
                 navigateToPath(href);
