@@ -3,6 +3,8 @@
     "site": "hakiri-kaban",
     "public": ".",
     "ignore": [
+      ".jj/**",
+      ".git/**",
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
